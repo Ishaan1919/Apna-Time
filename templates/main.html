@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mai.css') }}">
+    </head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <script>
+        function update_values(){
+            alert("ALOHA");
+            $(".timethingie").html   = {{stime}};
+        };
+    </script>
+
+
+    <body onload = "update_values()">
+        <div>
+            <div class = "screencenter">
+                <p class = "timethingie">{{stime}}</p>
+            </div>
+           <div class="wave"></div>
+           <div class="wave"></div>
+           <div class="wave"></div>
+        </div>
+      </body>
+</html>

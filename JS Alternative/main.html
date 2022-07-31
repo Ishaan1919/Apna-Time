@@ -1,0 +1,41 @@
+
+<html>
+    <head>
+    <title>APNA TIME AGAYA</title>
+    <link rel = "stylesheet" href = "main.css">
+   <script type="text/javascript"> 
+    function display_c(){
+    var refresh=1000; // Refresh rate in milli seconds
+    mytime=setTimeout('display_ct()',refresh)
+    }
+    
+    function display_ct() {
+    var d = new Date();
+    var dusraH = d.getHours();
+    var dusraM = d.getMinutes();
+    var dusraS = d.getSeconds();
+    var scofday = (dusraH * 3600) + (dusraM * 60) + dusraS;
+    var apnaH = Math.floor((scofday/2700));
+    var apnaM = Math.floor((scofday - (apnaH * 2700) )/60);
+    var apnaS = (scofday - (apnaH * 2700 + apnaM * 60));
+    var TRN = apnaH.toString() + ":" + apnaM.toString() + ":" + apnaS.toString();
+
+    document.getElementById('ct').innerHTML = TRN;
+    display_c();
+     }
+    </script>
+    </head>
+    
+    <body onload=display_ct();>
+        <div class = "screencenter">
+            
+    <span style="font-size: 100px;color: rgb(0, 0, 0);text-shadow: 3px 3px #ffffff;">APNA TIME : </span>
+            
+    <span id='ct' ></span>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        </div>
+
+    </body>
+    </html>
